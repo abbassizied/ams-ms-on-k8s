@@ -2,6 +2,7 @@ apiVersion: apps/v1
 kind: StatefulSet
 metadata:
   name: article-sts
+  namespace: ams-backend
 spec:
   selector:
     matchLabels:
