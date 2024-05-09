@@ -64,5 +64,5 @@ spec:
     app: mysql
   ports:
     - protocol: TCP
-      port: 3333 # External exposed port
+      port: 3306 # External exposed port
       targetPort: 3306 # Internal port
