@@ -22,8 +22,8 @@ spec:
         - containerPort: 80
         env:
           # Usage with arbitrary server
-          - name: PMA_ARBITRARY
-            value: "1"
+          - name: PMA_HOST
+            value: mysql-svc
 
 ---
 apiVersion: v1
