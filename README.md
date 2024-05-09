@@ -14,12 +14,12 @@ $ kubectl apply -f ./pma
 $ kubectl apply -f ./backend
 
 
-$ kubectl get sts -n=ams-database
-$ kubectl get pods -n=ams-database
-$ kubectl get svc -n=ams-database
+$ kubectl get sts -n ams-database
+$ kubectl get pods -n ams-database
+$ kubectl get svc -n ams-database
 
-$ kubectl get sts -n=ams-backend
-$ kubectl get pods -n=ams-backend
-$ kubectl get svc -n=ams-backend 
+$ kubectl get sts -n ams-backend
+$ kubectl get pods -n ams-backend
+$ kubectl get svc -n ams-backend 
 
 ```
