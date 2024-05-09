@@ -22,18 +22,13 @@ spec:
             - name: http
               containerPort: 8080
           env:
-            - name: EUREKA_CLIENT_SERVICE-URL_DEFAULTZONE
+            - name: EUREKA_SERVICE_URL // This overrides your Spring Property
               valueFrom:
                 configMapKeyRef:
                   name: eureka-cm
                   key: eureka_service_address
-          volumeMounts:
-            - name: ams-backend-pvc
-              mountPath: /var/lib/proxy-data/
-    volumes:
-      - name: ams-backend-pvc
-        persistentVolumeClaim:
-          claimName: backend-pvc-dynamic
+            - name: EUREKA_INSTANCE_PREFER_IP_ADDRESS
+              value: true
 
 ---
 kind: Service
