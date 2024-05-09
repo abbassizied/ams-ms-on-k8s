@@ -50,6 +50,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: provider-svc
+  namespace: ams-backend
 spec:
   clusterIP: None
   selector:
