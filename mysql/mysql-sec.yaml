@@ -5,6 +5,5 @@ metadata:
   namespace: ams-database
 type: Opaque
 data:
-  root-password: "" # empty string root password
   user-username: dXNlcjEyMw== # user123
   user-password: cGFzczEyMw== # pass123
