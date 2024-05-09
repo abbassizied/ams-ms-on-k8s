@@ -16,8 +16,8 @@ spec:
         image: phpmyadmin/phpmyadmin # Official phpMyAdmin Docker image
         resources:
           limits:
-            memory: "128Mi"
-            cpu: "500m"
+            memory: "512Mi"
+            cpu: "1"
         ports:
         - containerPort: 80
         env:
