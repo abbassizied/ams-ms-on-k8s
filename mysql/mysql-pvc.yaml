@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  name: mysql-pvc-dynamic
+  name: mysql-pvc
   namespace: ams-database
 spec:
   accessModes:
