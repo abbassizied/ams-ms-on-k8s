@@ -4,4 +4,4 @@ metadata:
   name: eureka-cm
   namespace: ams-backend
 data:
-  eureka_service_address: http://eureka-0.eureka:8761/eureka
+  eureka_service_address: http://eureka.ams-backend.svc.cluster.local:8761
