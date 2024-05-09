@@ -18,7 +18,9 @@ spec:
         app: mysql
     spec:
       containers:
-        - env:
+        - image: mysql
+          name: mysql
+          env:
             - name: MYSQL_ROOT_PASSWORD
               valueFrom:
                 secretKeyRef:
@@ -34,10 +36,9 @@ spec:
                 secretKeyRef:
                   key: user-password
                   name: db-secrets
-          image: mysql
-          name: mysql
           ports:
-            - containerPort: 3306
+            - name: mysql
+              containerPort: 3306
           volumeMounts:
             - name: mysql-persistent-storage
               mountPath: /var/lib/mysql
