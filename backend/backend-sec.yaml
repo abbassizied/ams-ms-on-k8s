@@ -6,4 +6,4 @@ metadata:
 type: Opaque
 data: 
   database-username: cm9vdA== # root
-  database-password: ''
+  database-password: cm9vdA== # root
