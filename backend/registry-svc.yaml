@@ -33,9 +33,10 @@ metadata:
   labels:
     app: eureka
 spec:
-  clusterIP: None
   ports:
-    - port: 8761
-      name: eureka
+  - nodePort: 31300
+    port: 8761
   selector:
     app: eureka
+  type: NodePort
+  
