@@ -25,7 +25,8 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: phpmyadmin-service
+  name: phpmyadmin-svc
+  namespace: ams-database
 spec:
   ports:
   - nodePort: 31008
