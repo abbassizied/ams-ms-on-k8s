@@ -23,7 +23,7 @@ spec:
             - containerPort: 8761
           env:
             - name: EUREKA_INSTANCE_PREFERIPADDRESS
-              value: true
+              value: "true"
 
 ---
 apiVersion: v1
