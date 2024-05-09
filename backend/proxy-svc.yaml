@@ -1,0 +1,46 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: proxy-sts
+spec:
+  selector:
+    matchLabels:
+      app: proxy
+  serviceName: "proxy"
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: proxy
+    spec:
+      containers:
+        - name: proxy
+          image: sipacademy2024/serviceproxy
+          imagePullPolicy: IfNotPresent
+          ports:
+            - name: http
+              containerPort: 8080
+          resources:
+            limits:
+              cpu: "0.2"
+              memory: "200Mi"
+          env:
+            - name: EUREKA_CLIENT_SERVICE-URL_DEFAULTZONE
+              valueFrom:
+                configMapKeyRef:
+                  name: eureka-cm
+                  key: eureka_service_address
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: proxy
+spec:
+  selector:
+    app: proxy
+  type: NodePort
+  ports:
+    - name: proxy
+      port: 80
+      targetPort: 8080
+      nodePort: 30150
