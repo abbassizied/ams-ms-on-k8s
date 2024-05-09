@@ -1,3 +1,4 @@
+---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -12,26 +13,22 @@ spec:
         app: phpmyadmin
     spec:
       containers:
-      - name: phpmyadmin
-        image: phpmyadmin/phpmyadmin # Official phpMyAdmin Docker image 
+      - env:
+        - name: PMA_HOST
+          value: mysql-svc
+        image: phpmyadmin/phpmyadmin
+        name: phpmyadmin
         ports:
         - containerPort: 80
-        env:
-          - name: PMA_HOST
-            value: "mysql-svc"
-
 ---
 apiVersion: v1
 kind: Service
 metadata:
   name: phpmyadmin-service
 spec:
-  type: NodePort
+  ports:
+  - nodePort: 31008
+    port: 80
   selector:
     app: phpmyadmin
-  ports:
-  - port: 80
-    targetPort: 80
-    protocol: TCP
-    nodePort: 31008
-
+  type: NodePort
