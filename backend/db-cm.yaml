@@ -4,5 +4,5 @@ metadata:
   name: database-cm
   namespace: ams-backend
 data:
-  provider_database_url: jdbc:mysql://mysql-svc:3306/bdServiceProviderAvril2024?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC&createDatabaseIfNotExist=true
-  article_database_url: jdbc:mysql://mysql-svc:3306/bdServiceArticleAvril2024?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC&createDatabaseIfNotExist=true
+  provider_database_url: jdbc:mysql://mysql-svc.database-cm.svc.cluster.local:3306/bdServiceProviderAvril2024?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC&createDatabaseIfNotExist=true
+  article_database_url: jdbc:mysql://mysql-svc.database-cm.svc.cluster.local:3306/bdServiceArticleAvril2024?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC&createDatabaseIfNotExist=true
