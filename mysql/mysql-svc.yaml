@@ -19,11 +19,6 @@ spec:
     spec:
       containers:
       - env:
-        - name: MYSQL_ROOT_PASSWORD
-          valueFrom:
-            secretKeyRef:
-              key: root-password
-              name: db-secrets
         - name: MYSQL_USER
           valueFrom:
             secretKeyRef:
