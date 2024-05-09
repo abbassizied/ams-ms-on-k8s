@@ -9,6 +9,9 @@ $ kubectl create namespace ams-backend
 
 $ cd ams-ms-on-k8s
 
+# you can see the IP address of each pod with:
+$ kubectl get pods -o wide --all-namespaces
+
 $ kubectl apply -f ./mysql 
 $ kubectl apply -f ./pma
 $ kubectl apply -f ./backend
