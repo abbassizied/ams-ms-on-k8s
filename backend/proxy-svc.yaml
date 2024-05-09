@@ -35,6 +35,7 @@ kind: Service
 apiVersion: v1
 metadata:
   name: proxy
+  namespace: ams-backend
 spec:
   selector:
     app: proxy
