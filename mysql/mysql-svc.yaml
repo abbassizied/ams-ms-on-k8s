@@ -23,7 +23,7 @@ spec:
             - containerPort: 3306
           resources:
             limits:
-              cpu: "0.6"
+              cpu: "1"
               memory: "512Mi"
           env:
             - name: MYSQL_ROOT_PASSWORD
